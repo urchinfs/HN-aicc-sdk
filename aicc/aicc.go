@@ -799,7 +799,7 @@ func (c *client) GetDownloadLink(ctx context.Context, storageVolName, filePath s
 		return "", err
 	}
 
-	signedUrl := fmt.Sprintf("%s@%s/appspace/v1/system/bigfile/downloadBigUserFileStream?filePath=%s&name=%s",
+	signedUrl := fmt.Sprintf("%s@^^@%s/appspace/v1/system/bigfile/downloadBigUserFileStream?filePath=%s&name=%s",
 		c.token, c.endpoint, c.completePath(storageVolName, path.Dir(filePath)), path.Base(filePath))
 	return signedUrl, nil
 }
